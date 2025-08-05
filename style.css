@@ -160,25 +160,20 @@ body, html {
 
 #close-finder {
     position: absolute;
-    top: 10px;
-    left: 14px;
-    font-size: 14px;
-    font-weight: bold;
-    color: white;
-    background: #ff5f56; /* macOS red */
+    top: 12px;
+    left: 15px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    width: 14px;
-    height: 14px;
-    line-height: 14px;
-    text-align: center;
+    background: transparent;
+    border: 1px solid #ff5f56;
     cursor: pointer;
     z-index: 5;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
     transition: background 0.2s ease;
   }
   
   #close-finder:hover {
-    background: #e0443e;
+    background: #ff5f56;
   }
   
   
