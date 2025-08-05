@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zbor Portfolio</title>
+  <title>Hugo Zbor</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+  
 </head>
 <body>
   <!-- Top Menu Bar -->
@@ -28,7 +30,19 @@
   </div>
 
   <!-- Main Screen -->
-  <div id="main-screen"></div>
+  <div id="main-screen">
+    <!-- Dock inside main screen -->
+    <div id="dock">
+      <img src="dock/dock.png" id="dock-bg" alt="Dock background" />
+      <div id="dock-icons">
+        <img src="dock/finder.png" class="dock-icon" alt="Finder" />
+        <img src="dock/mail.png" class="dock-icon" alt="Mail" />
+        <img src="dock/notes.png" class="dock-icon" alt="Notes" />
+        <img src="dock/bin.png" class="dock-icon" alt="Bin" />
+      </div>
+    </div>
+  </div>
+  
 
   <!-- Startup Sound -->
   <audio id="startup-sound" src="startupsound.mp3" preload="auto"></audio>

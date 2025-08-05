@@ -99,6 +99,51 @@ body, html {
     /* background-color: rgba(255, 0, 0, 0.3); */ /* for testing */
   }
   
+  /* Dock Container */
+#dock {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100px;
+    width: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    pointer-events: none; /* lets icons inside still be clickable */
+  }
+  
+  /* Dock Background Strip */
+  #dock-bg {
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* Dock Icons */
+  #dock-icons {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    padding: 10px 20px;
+    z-index: 1;
+    pointer-events: auto;
+  }
+  
+  .dock-icon {
+    height: 64px;
+    width: auto;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .dock-icon:hover {
+    transform: scale(1.25);
+  }
+  
+  
   /* Fade effects */
   .fade-login {
     opacity: 0 !important;
@@ -107,4 +152,6 @@ body, html {
   .fade-main {
     opacity: 1 !important;
   }
+
+  
   
