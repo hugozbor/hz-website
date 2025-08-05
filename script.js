@@ -60,6 +60,15 @@ window.addEventListener('DOMContentLoaded', () => {
   tiktokHotspot.addEventListener('click', () => {
     window.open('https://www.tiktok.com/@hugozbor', '_blank');
   });
+
+    const closeFinder = document.getElementById('close-finder');
+    if (closeFinder && finderWindow) {
+    closeFinder.addEventListener('click', () => {
+        finderWindow.style.display = 'none';
+        finderBg.src = 'finder-window.png'; // reset image
+    });
+    }
+
 });
 
 function updateTime() {
