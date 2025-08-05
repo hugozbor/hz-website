@@ -1,13 +1,169 @@
-/* Reset */
+/* Base reset */
 body, html {
     margin: 0;
     padding: 0;
     overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Login and main screens */
+#login-screen,
+#main-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.8s ease;
+}
+
+/* Backgrounds */
+#login-screen {
+    background-image: url('background.jpg');
+    z-index: 2;
+    opacity: 1;
+}
+
+#main-screen {
+    background-image: url('background2.jpg');
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Fade effect classes */
+.fade-login {
+    opacity: 0 !important;
+}
+
+.fade-main {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Login image and hotspot */
+#login-container {
+    position: relative;
+    width: 500px;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#login-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#hover-zone {
+    position: absolute;
+    top: 235px;
+    left: 140px;
+    width: 215px;
+    height: 72px;
+    cursor: pointer;
+}
+
+/* Dock styles */
+#dock {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 10;
+    pointer-events: none;
+}
+
+#dock-bg {
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#dock-icons {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    padding: 10px 20px;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+.dock-icon {
+    height: 64px;
+    width: auto;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.dock-icon:hover {
+    transform: scale(1.5);
+}
+
+/* Finder Window */
+#finder-window {
+    position: absolute;
+    width: 500px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 200;
   }
   
-  /* Top Menu Bar */
-  #top-bar {
+  #finder-bg {
+    width: 100%;
+    display: block;
+    position: relative; /* ✅ Make this the parent */
+  }
+  
+  
+  .finder-hotspot {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+#instagram-hotspot {
+  position: absolute;
+  top: 30%;           /* moved down */
+  left: 35%;
+  width: 18%;
+  height: 40%;
+  /*background: rgba(255, 0, 0, 0.3); /* debug only */
+  cursor: pointer;
+  z-index: 1;
+}
+
+#tiktok-hotspot {
+  position: absolute;
+  top: 45%;           /* moved down */
+  left: 68%;
+  width: 18%;
+  height: 40%;
+  /*background: rgba(0, 255, 0, 0.3); /* debug only */
+  cursor: pointer;
+  z-index: 1;
+}
+
+  
+  
+  
+
+/* Top Menu Bar */
+#top-bar {
     position: fixed;
     top: 0;
     left: 0;
@@ -22,136 +178,25 @@ body, html {
     padding: 0 10px;
     z-index: 999;
     border-bottom: 1px solid #d0d0d0;
-  }
-  
-  #top-left img#logo {
+}
+
+#top-left img#logo {
     height: 16px;
-  }
-  
-  #top-right {
+}
+
+#top-right {
     display: flex;
     align-items: center;
     gap: 8px;
-  }
-  
-  #top-right .icon {
+}
+
+#top-right .icon {
     height: 12px;
     width: auto;
-    filter: brightness(0); /* makes icons black */
-  }
-  
-  #datetime {
+    filter: brightness(0);
+}
+
+#datetime {
     margin-left: 4px;
     margin-right: 20px;
-  }
-  
-  
-  /* Login & Main Screens */
-  #login-screen,
-  #main-screen {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    transition: opacity 0.8s ease;
-  }
-  
-  /* Backgrounds */
-  #login-screen {
-    background-image: url('background.jpg');
-    z-index: 2;
-    opacity: 1;
-  }
-  
-  #main-screen {
-    background-image: url('background2.jpg');
-    z-index: 1;
-    opacity: 0;
-  }
-  
-  /* Login container */
-  #login-container {
-    position: relative;
-    width: 500px;
-    margin: auto;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  /* Login image */
-  #login-image {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  /* Hover hotspot over red area (scaled) */
-  #hover-zone {
-    position: absolute;
-    top: 235px;
-    left: 140px;
-    width: 215px;
-    height: 72px;
-    cursor: pointer;
-    /* background-color: rgba(255, 0, 0, 0.3); */ /* for testing */
-  }
-  
-  /* Dock Container */
-#dock {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 100px;
-    width: auto;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    pointer-events: none; /* lets icons inside still be clickable */
-  }
-  
-  /* Dock Background Strip */
-  #dock-bg {
-    position: absolute;
-    bottom: 0;
-    height: 60px;
-    pointer-events: none;
-    z-index: 0;
-  }
-  
-  /* Dock Icons */
-  #dock-icons {
-    position: relative;
-    display: flex;
-    gap: 20px;
-    padding: 10px 20px;
-    z-index: 1;
-    pointer-events: auto;
-  }
-  
-  .dock-icon {
-    height: 64px;
-    width: auto;
-    transition: transform 0.2s ease;
-    cursor: pointer;
-  }
-  
-  .dock-icon:hover {
-    transform: scale(1.25);
-  }
-  
-  
-  /* Fade effects */
-  .fade-login {
-    opacity: 0 !important;
-  }
-  
-  .fade-main {
-    opacity: 1 !important;
-  }
-
-  
-  
+}
