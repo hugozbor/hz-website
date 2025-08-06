@@ -1,15 +1,14 @@
-/* Base reset */
 body, html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     overflow-y: auto;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-/* Login and main screens */
-#login-screen,
-#main-screen {
+  }
+  
+  /* Login and Main Screens */
+  #login-screen,
+  #main-screen {
     position: absolute;
     top: 0;
     left: 0;
@@ -18,50 +17,47 @@ body, html {
     background-size: cover;
     background-position: center;
     transition: opacity 0.8s ease;
-}
-
-/* Backgrounds */
-#login-screen {
+  }
+  
+  #login-screen {
     background-image: url('background.jpg');
-    height: 100dvh;
     z-index: 2;
     opacity: 1;
-}
-
-#main-screen {
+  }
+  
+  #main-screen {
     background-image: url('background2.jpg');
     z-index: 2;
     opacity: 0;
     pointer-events: none;
-}
-
-/* Fade effect classes */
-.fade-login {
+  }
+  
+  .fade-login {
     opacity: 0 !important;
-}
-
-.fade-main {
+  }
+  
+  .fade-main {
     opacity: 1 !important;
     pointer-events: auto !important;
-}
-
-/* Login image and hotspot */
-#login-container {
+  }
+  
+  /* Login image */
+  #login-container {
     position: relative;
     width: 90vw;
     max-width: 500px;
     margin: auto;
     top: 50%;
     transform: translateY(-50%);
-}
-
-#login-image {
+  }
+  
+  #login-image {
     width: 100%;
     height: auto;
     display: block;
-}
-
-#hover-zone {
+  }
+  
+  #hover-zone {
     position: absolute;
     top: 53%;
     left: 28%;
@@ -70,15 +66,15 @@ body, html {
     cursor: pointer;
    /*background: #ff00004c; */
 }
-
-/* Dock styles */
-#dock {
+  
+  /* Dock */
+  #dock {
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 70vw;
-    max-width: 600px;
+    width: 90vw;
+    max-width: 500px;
     height: auto;
     display: flex;
     align-items: flex-end;
@@ -107,7 +103,13 @@ body, html {
     justify-content: center;
   }
   
-
+  .dock-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
   .dock-icon {
     height: 10vw;
     max-height: 64px;
@@ -117,13 +119,27 @@ body, html {
     z-index: 2;
   }
   
-
-.dock-icon:hover {
+  .dock-icon:hover {
     transform: scale(1.5);
-}
-
-/* Finder Window */
-#finder-window {
+  }
+  
+  .dock-indicator {
+    position: absolute;
+    bottom: -6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .dock-indicator.active {
+    opacity: 1;
+  }
+  
+  /* App Windows */
+  #finder-window{
     position: absolute;
     width: 90vw;
     max-width: 500px;
@@ -134,135 +150,80 @@ body, html {
     transform: translate(-50%, -50%);
     display: none;
     z-index: 200;
-}
+  }
 
-#finder-bg {
-    width: 100%;
-    display: block;
-    position: relative;
-}
-
-.finder-hotspot {
-    position: absolute;
-    cursor: pointer;
-    z-index: 1;
-}
-
-#instagram-hotspot {
-    top: 30%;
-    left: 35%;
-    width: 18%;
-    height: 40%;
-}
-
-#tiktok-hotspot {
-    top: 45%;
-    left: 68%;
-    width: 18%;
-    height: 40%;
-}
-
-/* Mac-style Close Button */
-#close-finder {
-    position: absolute;
-    top: 10px;
-    left: 14px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: transparent;
-    border: 1px solid #ff5f56;
-    cursor: pointer;
-    z-index: 5;
-    transition: background 0.2s ease;
-}
-
-#close-finder:hover {
-    background: #ff5f56;
-}
-
-/* Top Menu Bar */
-#top-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 24px;
-    background: #e9e9e9;
-    color: #000;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px;
-    z-index: 999;
-    border-bottom: 1px solid #d0d0d0;
-}
-
-#top-left img#logo {
-    height: 16px;
-}
-
-#top-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-#top-right .icon {
-    height: 12px;
-    width: auto;
-    filter: brightness(0);
-}
-
-#datetime {
-    margin-left: 4px;
-    margin-right: 20px;
-}
-
-/* ✅ Responsive tweaks for smaller screens */
-@media (max-width: 768px) {
-    #top-bar {
-        font-size: 10px;
-        padding: 0 6px;
-    }
-
-    #dock-icons {
-        gap: 12px;
-        padding: 8px 10px;
-    }
-
-    .dock-icon {
-        height: 12vw;
-        max-height: 50px;
-    }
-
-    #close-finder {
-        width: 16px;
-        height: 16px;
-    }
-}
-
-/* Bin Window */
-#bin-window {
+  #mail-window{
     position: absolute;
     width: 90vw;
     max-width: 500px;
     max-height: 80vh;
     overflow-y: auto;
-    top: 55%;
-    left: 70%;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 200;
+  }
+
+  #notes-window{
+    position: absolute;
+    width: 90vw;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 200;
+  }
+
+  #bin-window {
+    position: absolute;
+    width: 90vw;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    top: 50%;
+    left: 55%;
     transform: translate(-50%, -50%);
     display: none;
     z-index: 200;
   }
   
+  #finder-bg,
+  #mail-bg,
+  #notes-bg,
   #bin-bg {
     width: 100%;
     display: block;
     position: relative;
   }
   
+  .finder-hotspot {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  #instagram-hotspot {
+    top: 30%;
+    left: 35%;
+    width: 18%;
+    height: 40%;
+  }
+  
+  #tiktok-hotspot {
+    top: 45%;
+    left: 68%;
+    width: 18%;
+    height: 40%;
+  }
+  
+  /* Close Buttons */
+  #close-finder,
+  #close-mail,
+  #close-notes,
   #close-bin {
     position: absolute;
     top: 10px;
@@ -277,7 +238,49 @@ body, html {
     transition: background 0.2s ease;
   }
   
+  #close-finder:hover,
+  #close-mail:hover,
+  #close-notes:hover,
   #close-bin:hover {
     background: #ff5f56;
+  }
+  
+  /* Top Bar */
+  #top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    background: #e9e9e9;
+    color: #000;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    z-index: 999;
+    border-bottom: 1px solid #d0d0d0;
+  }
+  
+  #top-left img#logo {
+    height: 16px;
+  }
+  
+  #top-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #top-right .icon {
+    height: 12px;
+    width: auto;
+    filter: brightness(0);
+  }
+  
+  #datetime {
+    margin-left: 4px;
+    margin-right: 20px;
   }
   

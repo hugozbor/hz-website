@@ -35,10 +35,22 @@
     <div id="dock">
       <img src="dock/dock.png" id="dock-bg" alt="Dock background" />
       <div id="dock-icons">
-        <img src="dock/finder.png" class="dock-icon" alt="Finder" />
-        <img src="dock/mail.png" class="dock-icon" alt="Mail" />
-        <img src="dock/notes.png" class="dock-icon" alt="Notes" />
-        <img src="dock/bin.png" class="dock-icon" alt="Bin" />
+        <div class="dock-item">
+          <img src="dock/finder.png" class="dock-icon" alt="Finder" />
+          <div class="dock-indicator" id="indicator-finder"></div>
+        </div>
+        <div class="dock-item">
+          <img src="dock/mail.png" class="dock-icon" alt="Mail" />
+          <div class="dock-indicator" id="indicator-mail"></div>
+        </div>
+        <div class="dock-item">
+          <img src="dock/notes.png" class="dock-icon" alt="Notes" />
+          <div class="dock-indicator" id="indicator-notes"></div>
+        </div>
+        <div class="dock-item">
+          <img src="dock/bin.png" class="dock-icon" alt="Bin" />
+          <div class="dock-indicator" id="indicator-bin"></div>
+        </div>
       </div>      
     </div>
 
@@ -50,7 +62,19 @@
       <div id="tiktok-hotspot" class="finder-hotspot"></div>
     </div>
 
-    <!-- ✅ Bin Window -->
+    <!-- Mail Window -->
+    <div id="mail-window">
+      <div id="close-mail"></div>
+      <img src="mail-window.png" alt="Mail Window" id="mail-bg" />
+    </div>
+
+    <!-- Notes Window -->
+    <div id="notes-window">
+      <div id="close-notes"></div>
+      <img src="notes-window.png" alt="Notes Window" id="notes-bg" />
+    </div>
+
+    <!-- Bin Window -->
     <div id="bin-window">
       <div id="close-bin"></div>
       <img src="bin-window.png" alt="Bin Window" id="bin-bg" />
@@ -58,7 +82,6 @@
 
   </div>
 
-  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
