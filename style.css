@@ -171,8 +171,8 @@ body, html {
     max-width: 500px;
     max-height: auto;
     overflow-y: hidden;
-    top: 45%;
-    left: 50%;
+    top: 35%;
+    left: 48%;
     transform: translate(-50%, -50%);
     display: none;
     z-index: 200;
@@ -219,6 +219,14 @@ body, html {
     width: 18%;
     height: 40%;
   }
+
+  #bin-hotspot {
+    top: 45%;
+    left: 68%;
+    width: 18%;
+    height: 40%;
+    /*background: #ff00004c;*/
+  }
   
   /* Close Buttons */
   #close-finder,
@@ -232,7 +240,7 @@ body, html {
     height: 14px;
     border-radius: 50%;
     background: transparent;
-    border: 1px solid #ff5f56;
+    border: 1px solid #ff5e5600;
     cursor: pointer;
     z-index: 5;
     transition: background 0.2s ease;

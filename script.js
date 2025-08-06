@@ -21,6 +21,22 @@ window.addEventListener('DOMContentLoaded', () => {
     mainScreen.classList.add('fade-main');
   });
 
+    const binFileHotspot = document.getElementById('bin-hotspot');
+
+  binFileHotspot.addEventListener('mouseenter', () => {
+    binBg.src = 'bin-hover.png';
+  });
+
+  binFileHotspot.addEventListener('mouseleave', () => {
+    binBg.src = 'bin-window.png';
+  });
+
+  binFileHotspot.addEventListener('click', () => {
+    window.open('https://www.instagram.com/freezbor', '_blank');
+  });
+
+
+
   const finderIcon = document.querySelector('img[alt="Finder"]');
   const mailIcon = document.querySelector('img[alt="Mail"]');
   const notesIcon = document.querySelector('img[alt="Notes"]');
@@ -96,6 +112,11 @@ window.addEventListener('DOMContentLoaded', () => {
   // Hover image switches for Finder
   const instaHotspot = document.getElementById('instagram-hotspot');
   const tiktokHotspot = document.getElementById('tiktok-hotspot');
+  const binHotspot = document.getElementById('bin-hotspot');
+
+  binHotspot.addEventListener('click', () => {
+    window.open('https://www.instagram.com/freezbor', '_blank');
+  });
 
   instaHotspot.addEventListener('mouseenter', () => {
     finderBg.src = 'instagram-hover.png';
@@ -141,6 +162,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // ✅ Ensure About Me is active on load (both content and tab)
     document.getElementById('note1').classList.add('active');
     document.querySelector('.note-tab[data-note="note1"]').classList.add('active-tab');
+  
   
   
 
