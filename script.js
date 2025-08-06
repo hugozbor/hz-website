@@ -7,6 +7,9 @@ window.addEventListener('DOMContentLoaded', () => {
   const hoverZone = document.getElementById('hover-zone');
   const loginScreen = document.getElementById('login-screen');
   const mainScreen = document.getElementById('main-screen');
+  const logo = document.getElementById('logo');
+  const lockDropdown = document.getElementById('lock-dropdown');
+
 
   hoverZone.addEventListener('mouseenter', () => {
     loginImage.src = 'login_hover.png';
@@ -164,6 +167,22 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.note-tab[data-note="note1"]').classList.add('active-tab');
   
   
+  
+      // Toggle Lock Screen dropdown
+  logo.addEventListener('click', (e) => {
+    e.stopPropagation();
+    lockDropdown.style.display = (lockDropdown.style.display === 'block') ? 'none' : 'block';
+  });
+
+  // Hide dropdown when clicking outside
+  document.addEventListener('click', () => {
+    lockDropdown.style.display = 'none';
+  });
+
+  // Handle Lock Screen click
+  lockDropdown.addEventListener('click', () => {
+    location.reload();
+  });
   
 
 });

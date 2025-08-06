@@ -65,7 +65,7 @@ body, html {
     cursor: pointer;
    /*background: #ff00004c; */
 }
-  
+
   /* Dock */
   #dock {
     position: absolute;
@@ -73,7 +73,7 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
     width: 90vw;
-    max-width: 500px;
+    max-width: 550px;
     height: auto;
     display: flex;
     align-items: flex-end;
@@ -94,7 +94,7 @@ body, html {
   #dock-icons {
     position: relative;
     display: flex;
-    gap: 6vw;
+    gap: 4vw;
     padding: 1.5vw 2vw;
     z-index: 1;
     pointer-events: auto;
@@ -157,8 +157,8 @@ body, html {
     max-width: 500px;
     max-height: 80vh;
     overflow-y: auto;
-    top: 45%;
-    left: 50%;
+    top: 42%;
+    left: 54%;
     transform: translate(-50%, -50%);
     display: none;
     z-index: 200;
@@ -382,7 +382,31 @@ body, html {
   
   #top-left img#logo {
     height: 16px;
+    width: auto;
+    max-height: 100%;
+    object-fit: contain;
+    cursor: pointer;
   }
+  
+  
+  #lock-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    font-size: 12px;
+    color: #000;
+    z-index: 1000;
+    white-space: nowrap;
+  }
+  
+  #lock-dropdown:hover {
+    background: #e0e0e0;
+  }
+  
   
   #top-right {
     display: flex;
