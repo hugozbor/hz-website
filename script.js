@@ -25,6 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
     loginScreen.classList.add('fade-login');
     mainScreen.classList.add('fade-main');
     document.getElementById('usb-item').style.display = 'block';
+    document.getElementById('brutal-item').style.display = 'block';
   });
   
   
@@ -233,7 +234,14 @@ window.addEventListener('DOMContentLoaded', () => {
     mainScreen.classList.add('fade-main');
   
     document.getElementById('usb-item').style.display = 'block';
-    document.getElementById('gif-item').style.display = 'block'; // ✅ Add this line
+    document.getElementById('gif-item').style.display = 'block';
+    const brutalItem = document.getElementById('brutal-item');
+
+    brutalItem.addEventListener('click', () => {
+      window.open('https://brutalimagery.com', '_blank');
+    });
+
+  
   });
   
 
@@ -251,3 +259,4 @@ function updateTime() {
   const timeEl = document.getElementById('datetime');
   if (timeEl) timeEl.textContent = formatted;
 }
+
