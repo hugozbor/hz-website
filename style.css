@@ -74,42 +74,49 @@ body, html {
 /* Dock styles */
 #dock {
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    height: 100px;
+    width: 70vw;
+    max-width: 600px;
+    height: auto;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     z-index: 10;
     pointer-events: none;
-}
-
-#dock-bg {
+  }
+  
+  #dock-bg {
     position: absolute;
     bottom: 0;
-    height: 60px;
+    width: 100%;
+    height: auto;
     z-index: 0;
     pointer-events: none;
-}
-
-#dock-icons {
+  }
+  
+  #dock-icons {
     position: relative;
     display: flex;
-    gap: 20px;
-    padding: 10px 20px;
+    gap: 6vw;
+    padding: 1.5vw 2vw;
     z-index: 1;
     pointer-events: auto;
-}
+    width: 100%;
+    justify-content: center;
+  }
+  
 
-.dock-icon {
+  .dock-icon {
     height: 10vw;
     max-height: 64px;
     width: auto;
     transition: transform 0.2s ease;
     cursor: pointer;
     z-index: 2;
-}
+  }
+  
 
 .dock-icon:hover {
     transform: scale(1.5);
@@ -235,3 +242,42 @@ body, html {
         height: 16px;
     }
 }
+
+/* Bin Window */
+#bin-window {
+    position: absolute;
+    width: 90vw;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    top: 55%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 200;
+  }
+  
+  #bin-bg {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+  
+  #close-bin {
+    position: absolute;
+    top: 10px;
+    left: 14px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #ff5f56;
+    cursor: pointer;
+    z-index: 5;
+    transition: background 0.2s ease;
+  }
+  
+  #close-bin:hover {
+    background: #ff5f56;
+  }
+  

@@ -1,9 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
-    // 🕒 Update time
+    // Update time
     updateTime();
     setInterval(updateTime, 30000);
   
-    // 🔒 Login logic
+    // Login logic
     const loginImage = document.getElementById('login-image');
     const hoverZone = document.getElementById('hover-zone');
     const loginScreen = document.getElementById('login-screen');
@@ -22,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
       mainScreen.classList.add('fade-main');
     });
   
-    // 🧭 Finder logic
+    // Finder logic
     const finderIcon = document.querySelector('img[alt="Finder"]');
     const finderWindow = document.getElementById('finder-window');
     const finderBg = document.getElementById('finder-bg');
@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     }
   
-    // 📸 Instagram hover/click
+    // Instagram hover/click
     instaHotspot.addEventListener('mouseenter', () => {
       finderBg.src = 'instagram-hover.png';
     });
@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded', () => {
       window.open('https://www.instagram.com/hugozbor/', '_blank');
     });
   
-    // 🎵 TikTok hover/click
+    // TikTok hover/click
     tiktokHotspot.addEventListener('mouseenter', () => {
       finderBg.src = 'tiktok-hover.png';
     });
@@ -68,6 +68,26 @@ window.addEventListener('DOMContentLoaded', () => {
     tiktokHotspot.addEventListener('click', () => {
       window.open('https://www.tiktok.com/@hugozbor', '_blank');
     });
+    
+    // Bin logic
+    const binIcon = document.querySelector('img[alt="Bin"]');
+    const binWindow = document.getElementById('bin-window');
+    const binBg = document.getElementById('bin-bg');
+    const closeBin = document.getElementById('close-bin');
+
+    if (binIcon && binWindow) {
+      binIcon.addEventListener('click', () => {
+        binWindow.style.display = 'block';
+      });
+    }
+
+    if (closeBin && binWindow) {
+      closeBin.addEventListener('click', () => {
+        binWindow.style.display = 'none';
+        binBg.src = 'bin-window.png';
+      });
+    }
+
   });
   
   function updateTime() {
