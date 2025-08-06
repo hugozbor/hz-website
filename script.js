@@ -186,6 +186,23 @@ window.addEventListener('DOMContentLoaded', () => {
     location.reload();
   });
   
+  const usbItem = document.getElementById('usb-item');
+  const galleryWindow = document.getElementById('gallery-window');
+  const closeGallery = document.getElementById('close-gallery');
+
+  usbItem.addEventListener('click', () => {
+    galleryWindow.style.display = 'block';
+    galleryWindow.style.zIndex = ++topZIndex;
+  
+    if (typeof GLightbox === 'function') {
+      GLightbox({ selector: '.glightbox' });
+    }
+  });  
+
+  closeGallery.addEventListener('click', () => {
+    galleryWindow.style.display = 'none';
+  });
+
 
 });
 

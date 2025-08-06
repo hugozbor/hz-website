@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
   <title>Hugo Zbor</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 </head>
 <body>
 
@@ -111,7 +113,44 @@
       <img src="bin-window.png" alt="Bin Window" id="bin-bg" />
       <div id="bin-hotspot" class="finder-hotspot"></div>
     </div>
+<!-- 
+  GALLERY INSTRUCTIONS:
+  ----------------------
+  To add new design work to the gallery:
+  1. Save your image (JPG, PNG, or GIF) inside the "gallery/" folder.
+  2. Copy and paste one of the existing <a> blocks below to the TOP of the list.
+  3. Replace the file name (in both href and img src) with your new image name.
+  4. Save and refresh the site. The new image will appear with lightbox support.
+
+  Example:
+  <a href="gallery/my-new-design.jpg" class="glightbox" data-gallery="mywork"><img src="gallery/my-new-design.jpg" alt="My New Design"></a>
+   -->
+
+   <div id="gallery-window">
+    <div id="gallery-top-bar">
+      <div id="gallery-title">My Work</div>
+    </div>    
+    <div id="close-gallery"></div>
+    <img src="close-button.png" id="close-gallery-img" alt="Close Button Label" />
+    <div id="gallery-content">
+      <div id="gallery-grid">
+        <a href="gallery/work12.jpg" class="glightbox" data-gallery="mywork"><img src="gallery/work12.jpg" alt="Work 12"></a>
+        <a href="gallery/work11.jpg" class="glightbox" data-gallery="mywork"><img src="gallery/work11.jpg" alt="Work 11"></a>
+        <a href="gallery/work10.gif" class="glightbox" data-gallery="mywork"><img src="gallery/work10.gif" alt="Work 10"></a>
+        <a href="gallery/work9.jpg" class="glightbox" data-gallery="mywork"><img src="gallery/work9.jpg" alt="Work 9"></a>
+        <a href="gallery/work8.jpg" class="glightbox" data-gallery="mywork"><img src="gallery/work8.jpg" alt="Work 8"></a>
+        <a href="gallery/work7.jpg" class="glightbox" data-gallery="mywork"><img src="gallery/work7.jpg" alt="Work 7"></a>
+        <a href="gallery/work6.jpg" class="glightbox" data-gallery="mywork"><img src="gallery/work6.jpg" alt="Work 6"></a>
+        <a href="gallery/work5.jpg" class="glightbox" data-gallery="mywork"><img src="gallery/work5.jpg" alt="Work 5"></a>
+        <a href="gallery/work4.jpg" class="glightbox" data-gallery="mywork"><img src="gallery/work4.jpg" alt="Work 4"></a>
+        <a href="gallery/work3.jpg" class="glightbox" data-gallery="mywork"><img src="gallery/work3.jpg" alt="Work 3"></a>
+        <a href="gallery/work2.jpg" class="glightbox" data-gallery="mywork"><img src="gallery/work2.jpg" alt="Work 2"></a>
+        <a href="gallery/work1.gif" class="glightbox" data-gallery="mywork"><img src="gallery/work1.gif" alt="Work 1"></a>
+      </div>
+    </div>
   </div>
+  
+  
   
   
   <script src="script.js"></script>
