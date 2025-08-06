@@ -247,13 +247,22 @@ body, html {
 
   #notes-buttons {
     position: absolute;
-    top: 22%;
+    top: 25%;
     left: 6%;
     display: flex;
     flex-direction: column;
     gap: 2px;
     z-index: 5;
   }
+  
+  @media (max-width: 600px) {
+    #notes-buttons {
+      top: 15%;
+      left: 4%;
+      transform: scale(0.85);
+    }
+  }
+  
   
   .note-tab {
     width: 115px;
