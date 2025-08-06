@@ -22,7 +22,9 @@ window.addEventListener('DOMContentLoaded', () => {
   hoverZone.addEventListener('click', () => {
     loginScreen.classList.add('fade-login');
     mainScreen.classList.add('fade-main');
+    document.getElementById('usb-item').style.display = 'block';
   });
+  
 
     const binFileHotspot = document.getElementById('bin-hotspot');
 
