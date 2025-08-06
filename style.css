@@ -279,6 +279,12 @@ body, html {
     background: rgba(222, 222, 222, 0.3);
   }
   
+  .note-tab.active-tab {
+    background: rgba(222, 222, 222, 0.5);
+    border-color: #666;
+  }
+  
+  
   .note-title {
     font-size: 13px;
     font-weight: 600;

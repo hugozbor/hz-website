@@ -120,21 +120,29 @@ window.addEventListener('DOMContentLoaded', () => {
   tiktokHotspot.addEventListener('click', () => {
     window.open('https://www.tiktok.com/@hugozbor', '_blank');
   });
-  // Notes tab logic
-  const noteTabs = document.querySelectorAll('.note-tab');
-  const notes = document.querySelectorAll('.note-text');
-
-  noteTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.note;
-      notes.forEach(note => {
-        note.classList.remove('active');
+    // Notes tab logic
+    const noteTabs = document.querySelectorAll('.note-tab');
+    const notes = document.querySelectorAll('.note-text');
+  
+    noteTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.note;
+  
+        // Switch content
+        notes.forEach(note => note.classList.remove('active'));
+        document.getElementById(target).classList.add('active');
+  
+        // Highlight active tab
+        noteTabs.forEach(t => t.classList.remove('active-tab'));
+        tab.classList.add('active-tab');
       });
-      document.getElementById(target).classList.add('active');
     });
-  });
-  document.getElementById('note1').classList.add('active');
-
+  
+    // ✅ Ensure About Me is active on load (both content and tab)
+    document.getElementById('note1').classList.add('active');
+    document.querySelector('.note-tab[data-note="note1"]').classList.add('active-tab');
+  
+  
 
 });
 
