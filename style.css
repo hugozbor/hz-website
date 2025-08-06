@@ -63,11 +63,12 @@ body, html {
 
 #hover-zone {
     position: absolute;
-    top: 47%;
+    top: 53%;
     left: 28%;
     width: 43%;
-    height: 14%;
+    height: 20%;
     cursor: pointer;
+   /*background: #ff00004c; */
 }
 
 /* Dock styles */
