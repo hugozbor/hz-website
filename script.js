@@ -120,6 +120,22 @@ window.addEventListener('DOMContentLoaded', () => {
   tiktokHotspot.addEventListener('click', () => {
     window.open('https://www.tiktok.com/@hugozbor', '_blank');
   });
+  // Notes tab logic
+  const noteTabs = document.querySelectorAll('.note-tab');
+  const notes = document.querySelectorAll('.note-text');
+
+  noteTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.note;
+      notes.forEach(note => {
+        note.classList.remove('active');
+      });
+      document.getElementById(target).classList.add('active');
+    });
+  });
+  document.getElementById('note1').classList.add('active');
+
+
 });
 
 function updateTime() {
