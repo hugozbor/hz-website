@@ -257,11 +257,34 @@ body, html {
   
   @media (max-width: 600px) {
     #notes-buttons {
-      top: 15%;
-      left: 4%;
+      top: 23%;
+      left: 4.5%;
       transform: scale(0.85);
     }
+  
+    .note-tab {
+      width: 100px;
+      height: 36px;
+      padding: 4px 6px;
+      font-size: 11px;
+    }
+  
+    .note-title {
+      font-size: 12px;
+    }
+  
+    .note-date {
+      font-size: 10px;
+    }
+  
+    #notes-content {
+      font-size: 13px;
+      top: 24%;
+      left: 32%;
+      width: 60%;
+    }
   }
+  
   
   
   .note-tab {
