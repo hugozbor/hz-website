@@ -22,7 +22,6 @@ window.addEventListener('DOMContentLoaded', () => {
   hoverZone.addEventListener('click', () => {
     const startSound = document.getElementById('start-sound');
     if (startSound) startSound.play().catch(e => console.warn('Sound blocked by browser:', e));
-  
     loginScreen.classList.add('fade-login');
     mainScreen.classList.add('fade-main');
     document.getElementById('usb-item').style.display = 'block';
@@ -206,7 +205,13 @@ window.addEventListener('DOMContentLoaded', () => {
   closeGallery.addEventListener('click', () => {
     galleryWindow.style.display = 'none';
   });
-
+  
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+    });
+  });
+  
 
 });
 
