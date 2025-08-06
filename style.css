@@ -2,7 +2,8 @@
 body, html {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -46,7 +47,8 @@ body, html {
 /* Login image and hotspot */
 #login-container {
     position: relative;
-    width: 500px;
+    width: 90vw;
+    max-width: 500px;
     margin: auto;
     top: 50%;
     transform: translateY(-50%);
@@ -60,10 +62,10 @@ body, html {
 
 #hover-zone {
     position: absolute;
-    top: 235px;
-    left: 140px;
-    width: 215px;
-    height: 72px;
+    top: 47%;
+    left: 28%;
+    width: 43%;
+    height: 14%;
     cursor: pointer;
 }
 
@@ -99,7 +101,8 @@ body, html {
 }
 
 .dock-icon {
-    height: 64px;
+    height: 10vw;
+    max-height: 64px;
     width: auto;
     transition: transform 0.2s ease;
     cursor: pointer;
@@ -113,72 +116,59 @@ body, html {
 /* Finder Window */
 #finder-window {
     position: absolute;
-    width: 500px;
+    width: 90vw;
+    max-width: 500px;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
     z-index: 200;
-  }
-  
-  #finder-bg {
+}
+
+#finder-bg {
     width: 100%;
     display: block;
-    position: relative; /* ✅ Make this the parent */
-  }
-  
-  
-  .finder-hotspot {
+    position: relative;
+}
+
+.finder-hotspot {
     position: absolute;
-    width: 150px;
-    height: 150px;
     cursor: pointer;
     z-index: 1;
-  }
-  
+}
+
 #instagram-hotspot {
-  position: absolute;
-  top: 30%;           /* moved down */
-  left: 35%;
-  width: 18%;
-  height: 40%;
-  /*background: rgba(255, 0, 0, 0.3); /* debug only */
-  cursor: pointer;
-  z-index: 1;
+    top: 30%;
+    left: 35%;
+    width: 18%;
+    height: 40%;
 }
 
 #tiktok-hotspot {
-  position: absolute;
-  top: 45%;           /* moved down */
-  left: 68%;
-  width: 18%;
-  height: 40%;
-  /*background: rgba(0, 255, 0, 0.3); /* debug only */
-  cursor: pointer;
-  z-index: 1;
+    top: 45%;
+    left: 68%;
+    width: 18%;
+    height: 40%;
 }
 
+/* Mac-style Close Button */
 #close-finder {
     position: absolute;
-    top: 12px;
-    left: 15px;
-    width: 12px;
-    height: 12px;
+    top: 10px;
+    left: 14px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     background: transparent;
     border: 1px solid #ff5f56;
     cursor: pointer;
     z-index: 5;
     transition: background 0.2s ease;
-  }
-  
-  #close-finder:hover {
+}
+
+#close-finder:hover {
     background: #ff5f56;
-  }
-  
-  
-  
-  
+}
 
 /* Top Menu Bar */
 #top-bar {
@@ -217,4 +207,27 @@ body, html {
 #datetime {
     margin-left: 4px;
     margin-right: 20px;
+}
+
+/* ✅ Responsive tweaks for smaller screens */
+@media (max-width: 768px) {
+    #top-bar {
+        font-size: 10px;
+        padding: 0 6px;
+    }
+
+    #dock-icons {
+        gap: 12px;
+        padding: 8px 10px;
+    }
+
+    .dock-icon {
+        height: 12vw;
+        max-height: 50px;
+    }
+
+    #close-finder {
+        width: 16px;
+        height: 16px;
+    }
 }
