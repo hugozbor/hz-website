@@ -211,7 +211,32 @@ window.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
     });
   });
+
+    const gifItem = document.getElementById('gif-item');
+  const gifWindow = document.getElementById('gif-window');
+  const closeGif = document.getElementById('close-gif');
+
+  gifItem.addEventListener('click', () => {
+    gifWindow.style.display = 'block';
+    gifWindow.style.zIndex = ++topZIndex;
+  });
+
+  closeGif.addEventListener('click', () => {
+    gifWindow.style.display = 'none';
+  });
+
+  hoverZone.addEventListener('click', () => {
+    const startSound = document.getElementById('start-sound');
+    if (startSound) startSound.play().catch(e => console.warn('Sound blocked:', e));
   
+    loginScreen.classList.add('fade-login');
+    mainScreen.classList.add('fade-main');
+  
+    document.getElementById('usb-item').style.display = 'block';
+    document.getElementById('gif-item').style.display = 'block'; // ✅ Add this line
+  });
+  
+
 
 });
 

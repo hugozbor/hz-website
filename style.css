@@ -455,12 +455,14 @@ body, html {
   
   .desktop-item img {
     width: 100%;
-    border-radius: 6px;
     transition: background 0.2s ease;
+    padding: 4px;
+    box-sizing: border-box;
   }
   
   .desktop-item:hover img {
-    background: rgba(0, 119, 255, 0.302); /* translucent blue */
+    background: rgba(0, 119, 255, 0.2);
+    border-radius: 6px;
   }
   
   .desktop-label {
@@ -573,4 +575,84 @@ body, html {
     -webkit-user-drag: none;
     pointer-events: auto;
   }
+
+  #gif-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 90vw;
+    height: auto;
+    background: transparent;
+    border-radius: 14px;
+    display: none;
+    z-index: 200;
+    overflow: hidden;
+  }
+  
+  #gif-top-bar {
+    height: 28px;
+    background: linear-gradient(to bottom, #f0f0f0, #dcdcdc);
+    border-bottom: 1px solid #b0b0b0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    user-select: none;
+    pointer-events: none;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+  }
+  
+  #gif-title {
+    z-index: 2;
+  }
+  
+  #close-gif {
+    position: absolute;
+    top: 8px;
+    left: 14px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #ff5e5600;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  #close-gif:hover {
+    background: #ff5f56;
+  }
+  
+  #demo-gif {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+  }
+
+  #gif-item {
+    top: 60%;
+    left: 45%;
+  }
+  
+  #gif-item img {
+    border-radius: 0;
+  }
+  
+  #close-gif-img {
+    position: absolute;
+    top: 8px;
+    left: 14px;
+    height: 14px;
+    width: auto;
+    z-index: 10;
+  }
+  
   
